@@ -8,6 +8,8 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var inject = require('gulp-inject');
+//var series = require('stream-series');
+
 
 // Lint Task
 gulp.task('lint', function () {
@@ -22,6 +24,7 @@ gulp.task('csslibs', function () {
         .pipe(sass())
         .pipe(gulp.dest('dist/css'));
 });
+
 // Compile Our Sass
 gulp.task('sass', function () {
     return gulp.src('app/scss/*.scss')
@@ -31,7 +34,9 @@ gulp.task('sass', function () {
 
 // Concatenate & Minify JS
 gulp.task('jslibs', function () {
-    return gulp.src('app/libs/**/*.js')
+    return gulp.src(['app/libs/scripts/jquery-2.1.3.js',
+                     'app/libs/scripts/angular.js',
+                     'app/libs/**/*.js'])
         .pipe(concat('jslibs.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('jslibs.min.js'))
@@ -39,8 +44,8 @@ gulp.task('jslibs', function () {
         .pipe(gulp.dest('dist/scripts'));
 });
 
-gulp.task('scripts', function () {
-    return gulp.src(['app/scripts/**/*.js', 'app/scripts/app.js'])
+gulp.task('js', function () {
+    return gulp.src(['app/scripts/app.js','app/scripts/**/*.js'])
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('dist'))
         .pipe(rename('scripts.min.js'))
@@ -48,20 +53,27 @@ gulp.task('scripts', function () {
         .pipe(gulp.dest('dist/scripts'));
 });
 gulp.task('index', function () {
-    var target = gulp.src('index.html');
-    // It's not necessary to read the files (will speed up things), we're only after their paths:
-    var sources = gulp.src(['./dist/scripts/*.js', './dist/css/*.css'], { read: false });
-
-    return target.pipe(inject(sources))
-      .pipe(gulp.dest('./dist'));
+    var target = gulp.src(['index.html']);
+    var files = gulp.src(['dist/scripts/*.js', 'dist/css/*.css']);
+  
+    return target.pipe(inject(files))
+        .pipe(gulp.dest('dist'));
 });
+gulp.task('images', function () {
+    return gulp.src(['app/images/*.*'])
+               .pipe(gulp.dest('dist/images'));
+});
+gulp.task('views', function () {
+    return gulp.src(['app/views/**/*.*'])
+               .pipe(gulp.dest('dist/views'));
+});
+
 
 // Watch Files For Changes
 gulp.task('watch', function () {
-    gulp.watch('app/scripts/*.js', ['lint', 'scripts']);
+    gulp.watch('app/scripts/*.js', ['lint', 'js']);
     gulp.watch('app/scss/*.scss', ['sass']);
 });
 
 // Default Task
-gulp.task('default', ['lint', 'sass', 'csslibs', 'jslibs', 'scripts', 'watch']);
-gulp.task('index',['default']);
+gulp.task('default', ['lint', 'sass', 'csslibs', 'jslibs', 'js','views','images', 'watch']);
