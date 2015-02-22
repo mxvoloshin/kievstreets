@@ -20,17 +20,32 @@
                 .state('about', {
                     url: '/about',
                     templateUrl: '../app/views/about.html',
-                  
+
                 })
                 .state('login', {
                     url: '/login',
                     templateUrl: '../app/views/login.html',
                     controller: 'login'
                 })
+                .state('cabinet', {
+                    url: '/cabinet',
+                    templateUrl: '../app/views/cabinet.html',
+                    controller: 'cabinet'
+                })
+                 .state('questions', {
+                     url: '/questions',
+                     templateUrl: '../app/views/questions.html',
+                     controller: 'questions'
+                 })
+                .state('documents', {
+                    url: '/documents',
+                    templateUrl: '../app/views/documents.html',
+                    controller: 'documents'
+                })
                 .state('register', {
                     url: '/register',
                     templateUrl: '../app/views/register.html',
-                    controller:'register'
+                    controller: 'register'
                 });
         });
 })();

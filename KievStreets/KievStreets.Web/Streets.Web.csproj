@@ -62,9 +62,13 @@
     <Content Include="app\libs\css\bootstrap.css" />
     <Content Include="app\libs\css\bootstrap.css.map" />
     <Content Include="app\libs\css\bootstrap.min.css" />
+    <Content Include="app\scripts\controllers\cabinet.js" />
+    <Content Include="app\scripts\controllers\documents.js" />
     <Content Include="app\scripts\controllers\home.js" />
     <Content Include="app\scripts\controllers\login.js" />
+    <Content Include="app\scripts\controllers\questions.js" />
     <Content Include="app\scripts\controllers\register.js" />
+    <Content Include="app\scripts\directives\cabinetNavigation.js" />
     <Content Include="app\scripts\directives\navigation.js" />
     <Content Include="app\scss\kievstreets.css" />
     <Content Include="app\scss\kievstreets.scss" />
@@ -77,9 +81,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\scripts\app.js" />
+    <Content Include="app\views\cabinet.html" />
+    <Content Include="app\views\directives\cabinetNavigation.html" />
     <Content Include="app\views\directives\navigation.html" />
+    <Content Include="app\views\documents.html" />
     <Content Include="app\views\home.html" />
     <Content Include="app\views\login.html" />
+    <Content Include="app\views\questions.html" />
     <Content Include="app\views\register.html" />
     <Content Include="gulpfile.js" />
     <Content Include="app\libs\css\bootstrap-theme.css" />
