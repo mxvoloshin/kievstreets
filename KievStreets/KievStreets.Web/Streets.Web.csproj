@@ -57,8 +57,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\images\logo.jpg" />
     <Content Include="app\libs\css\bootstrap-theme.css.map" />
+    <Content Include="app\libs\css\bootstrap.css" />
     <Content Include="app\libs\css\bootstrap.css.map" />
+    <Content Include="app\libs\css\bootstrap.min.css" />
+    <Content Include="app\scripts\controllers\home.js" />
+    <Content Include="app\scripts\controllers\login.js" />
+    <Content Include="app\scripts\controllers\register.js" />
+    <Content Include="app\scripts\directives\navigation.js" />
+    <Content Include="app\scss\kievstreets.css" />
     <Content Include="app\scss\kievstreets.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -69,11 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\scripts\app.js" />
+    <Content Include="app\views\directives\navigation.html" />
+    <Content Include="app\views\home.html" />
+    <Content Include="app\views\login.html" />
+    <Content Include="app\views\register.html" />
     <Content Include="gulpfile.js" />
     <Content Include="app\libs\css\bootstrap-theme.css" />
     <Content Include="app\libs\css\bootstrap-theme.min.css" />
-    <Content Include="app\libs\css\bootstrap.css" />
-    <Content Include="app\libs\css\bootstrap.min.css" />
     <Content Include="app\libs\css\font-awesome.css" />
     <Content Include="app\libs\css\font-awesome.min.css" />
     <Content Include="app\libs\css\ng-table.css" />
@@ -98,13 +108,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\data\" />
-    <Folder Include="app\images\" />
-    <Folder Include="app\scripts\controllers\" />
-    <Folder Include="app\scripts\directives\" />
     <Folder Include="app\scripts\services\" />
     <Folder Include="app\tests\e2e\" />
     <Folder Include="app\tests\unit\" />
-    <Folder Include="app\views\directives\" />
     <Folder Include="gulp\" />
   </ItemGroup>
   <PropertyGroup>
