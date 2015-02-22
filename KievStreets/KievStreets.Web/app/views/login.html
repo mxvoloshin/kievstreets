@@ -9,24 +9,14 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <form name="registerForm">
-                        <div class="row form-group">
-                            <div class="col-sm-12">
-                                <input type="text" class="form-control" placeholder="Логін" />
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col-sm-12">
-                                <input type="text" class="form-control" placeholder="Пароль" />
-                                <span></span>
-                            </div>
-                        </div>
+                    <form name="loginForm" novalidate>
+                        <login form-name="loginForm" data="login"></login>
+                        <password form-name="loginForm" data="password"></password>
                     </form>
                 </div>
                 <div class="panel-footer">
-                    <button type="submit" class="btn btn-success">Увійти</button>
-                    <button type="button" class="btn btn-danger">Забув пароль</button>
+                    <button type="submit" class="btn btn-success" ng-click="authorize()">Увійти</button>
+                    <a href="#/forgotPassword" class="btn btn-danger">Забув пароль</a>
                 </div>
             </div>
         </div>

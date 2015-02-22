@@ -68,8 +68,12 @@
     <Content Include="app\scripts\controllers\login.js" />
     <Content Include="app\scripts\controllers\questions.js" />
     <Content Include="app\scripts\controllers\register.js" />
+    <Content Include="app\scripts\directives\auth\email.js" />
     <Content Include="app\scripts\directives\cabinetNavigation.js" />
+    <Content Include="app\scripts\directives\auth\login.js" />
     <Content Include="app\scripts\directives\navigation.js" />
+    <Content Include="app\scripts\directives\auth\password.js" />
+    <Content Include="app\scripts\directives\auth\userName.js" />
     <Content Include="app\scss\kievstreets.css" />
     <Content Include="app\scss\kievstreets.scss" />
     <None Include="Web.Debug.config">
@@ -82,6 +86,10 @@
   <ItemGroup>
     <Content Include="app\scripts\app.js" />
     <Content Include="app\views\cabinet.html" />
+    <Content Include="app\views\directives\auth\email.html" />
+    <Content Include="app\views\directives\auth\login.html" />
+    <Content Include="app\views\directives\auth\password.html" />
+    <Content Include="app\views\directives\auth\userName.html" />
     <Content Include="app\views\directives\cabinetNavigation.html" />
     <Content Include="app\views\directives\navigation.html" />
     <Content Include="app\views\documents.html" />

@@ -1,0 +1,7 @@
+﻿<div class="row form-group" ng-class="{'has-error': !!formName.login.$error.pattern ||!!formName.login.$error.minlength ||!!formName.login.$error.maxlength }">
+    <div class="col-sm-12">
+        <input type="text" name="login" class="form-control" placeholder="Логін" ng-pattern="regex.login" ng-minlength="5" ng-maxlength="12"
+               ng-model="data" />
+        <span></span>
+    </div>
+</div>  
