@@ -31,6 +31,11 @@ gulp.task('sass', function () {
         .pipe(sass())
         .pipe(gulp.dest('dist/css'));
 });
+gulp.task('sass_dev', function () {
+    return gulp.src('app/scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('app/scss'));
+});
 
 // Concatenate & Minify JS
 gulp.task('jslibs', function () {

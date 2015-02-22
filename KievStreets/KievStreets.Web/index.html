@@ -3,7 +3,6 @@
 <head>
     <title></title>
     <!-- inject:js -->
- 
     <!-- endinject -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -15,7 +14,7 @@
     <link href="app/libs/css/font-awesome.min.css" rel="stylesheet" />
     <link href="app/libs/css/ng-table.css" rel="stylesheet" />
     <link href="app/libs/css/xeditable.css" rel="stylesheet" />
-
+    <link href="app/scss/kievstreets.css" rel="stylesheet" />
 
     <script src="app/libs/scripts/jquery-2.1.3.js"></script>
     <script src="app/libs/scripts/angular.js"></script>
@@ -28,12 +27,19 @@
     <script src="app/libs/scripts/ng-table.js"></script>
     <script src="app/libs/scripts/underscore.js"></script>
     <script src="app/libs/scripts/xeditable.js"></script>
-   
+
     <script src="app/scripts/app.js"></script>
+    <script src="app/scripts/directives/navigation.js"></script>
+    <script src="app/scripts/controllers/home.js"></script>
+    <script src="app/scripts/controllers/login.js"></script>
+    <script src="app/scripts/controllers/register.js"></script>
 </head>
-<body ng-app="app">
-    hello
-    <div ui-view></div>
-  
+<body>
+    <div ng-app="app">
+        <div navigation></div>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </div>
 </body>
 </html>
